@@ -1,5 +1,7 @@
 # tasklist
 
+Proyecto personal simple de una lista de tareas para practicar el uso de Vuejs, teniendo como backen Nodejs, Express y PostgresSQL
+
 ## Project setup
 ```
 npm install
