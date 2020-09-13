@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const { Task } = require('../models');
+const { Task } = require('./models');
+const cors = require('cors');
 
-
+app.use(cors());
 app.get('/', (req, res) => {
     Task.findAll()
         .then(result => res.send(JSON.stringify(result, null, 2)))
