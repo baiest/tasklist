@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="col-md-8 offset-md-2">
     <Principal />
   </div>
 </template>
@@ -25,5 +25,6 @@ export default {
   color: #fff;
   margin-top: 60px;
   background: #010b2fe0;
+  padding: 5%;
 }
 </style>

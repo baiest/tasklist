@@ -1,17 +1,17 @@
 <template>
-  <div class = "cont">
-  <div class="titulo">Practica Task List</div>
-  <b-form-input class ="nuevo" v-model="text" placeholder="Ingresa tu tarea nueva"></b-form-input>
-  <b-button class="m-4" type="submit" variant="primary">Crear</b-button>
-  <b-form-checkbox
-    size= "lg"
-    class = "option"
-    id="checkbox-1"
-    v-model= "select"
-    name= "checkbox-1"
-    unchecked-value="not_accepted"
-    :key="task.id"
-    v-for="task in tasks">{{task.description}}</b-form-checkbox>
+    <div class = "m-8">
+      <h1 class="titulo">Practica Task List</h1>
+      <b-form @submit="Agregar" @reset="reset">
+      <b-form-input class ="nuevo" v-model="form.description" placeholder="Ingresa tu tarea nueva"></b-form-input>
+      <b-button class="m-4" type="submit" variant="primary">Crear</b-button>
+      </b-form>
+      <b-form-checkbox
+        size= "lg"
+        class = "option"
+        name= "checkbox"
+        unchecked-value="not_accepted"
+        :key="task.id"
+        v-for="task in tasks">{{task.description}}</b-form-checkbox>
   </div>
 </template>
 
@@ -20,7 +20,25 @@ import axios from 'axios'
 export default {
   data(){
     return{
+      form: {
+        description: '',
+        realizada: false
+      },
       tasks: []
+    }
+  },
+  methods: {
+    Agregar(evt){
+      evt.preventDefault();
+      console.log(JSON.stringify(this.form));
+      this.tasks.push(this.form);
+    },
+    reset(evt){
+      evt.preventDefault();
+      this.form = {
+        description: '',
+        realizada: false
+      }
     }
   },
   created(){
