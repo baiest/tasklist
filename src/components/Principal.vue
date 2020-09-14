@@ -1,9 +1,10 @@
 <template>
     <div class = "m-8">
       <h1 class="titulo">Practica Task List</h1>
-      <b-form @submit="Agregar" @reset="reset">
+      <b-form @submit="Agregar" @reset="Reset">
       <b-form-input class ="nuevo" v-model="form.description" placeholder="Ingresa tu tarea nueva"></b-form-input>
-      <b-button class="m-4" type="submit" variant="primary">Crear</b-button>
+      <b-button class="m-2 d-inline-block" type="submit" variant="primary">Crear</b-button>
+      <b-button class="d-inline-block" type="reset" variant="danger">Cancel</b-button>
       </b-form>
       <b-form-checkbox
         size= "lg"
@@ -21,6 +22,7 @@ export default {
   data(){
     return{
       form: {
+        id: 0,
         description: '',
         realizada: false
       },
@@ -30,12 +32,15 @@ export default {
   methods: {
     Agregar(evt){
       evt.preventDefault();
-      console.log(JSON.stringify(this.form));
+      this.form.id= this.tasks.length + 5;
+      console.log(this.form);
       this.tasks.push(this.form);
+
     },
-    reset(evt){
+    Reset(evt){
       evt.preventDefault();
       this.form = {
+        id: 0,
         description: '',
         realizada: false
       }
