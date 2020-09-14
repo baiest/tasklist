@@ -18,11 +18,11 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   data(){
     return{
       form: {
-        id: 0,
         description: '',
         realizada: false
       },
@@ -30,24 +30,25 @@ export default {
     }
   },
   methods: {
-    Agregar(evt){
+    async Agregar(evt){
       evt.preventDefault();
-      this.form.id= this.tasks.length + 5;
-      console.log(this.form);
       this.tasks.push(this.form);
+      await axios.post('http://localhost:3000/nuevo', this.form)
+        .then(res => console.log(res))
+        .catch(()=> console.log('No post'));
+      this.Reset(evt);
 
     },
     Reset(evt){
       evt.preventDefault();
       this.form = {
-        id: 0,
         description: '',
         realizada: false
       }
     }
   },
   created(){
-    axios.get('http://localhost:3000')
+    axios.get('http://localhost:3000/')
     .then(res => this.tasks = res.data);
   }
 }
