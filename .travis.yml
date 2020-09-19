@@ -4,11 +4,12 @@ services:
   - postgresql
 
 install:
-  - npm install
+  - npm ci
 
 script:
+  - npm install
   - npm run serve
-  
+
 deploy:
   provider: pages
   skip_cleanup: true
