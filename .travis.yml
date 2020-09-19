@@ -3,6 +3,12 @@ language: node_js
 services:
   - postgresql
 
+install:
+  - npm install
+
+script:
+  - npm run serve
+  
 deploy:
   provider: pages
   skip_cleanup: true
