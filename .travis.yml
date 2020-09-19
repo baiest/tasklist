@@ -4,14 +4,14 @@ services:
   - postgresql
 install: 
   - npm install
-script:
   - npm install --production
+script:
   - npm run serve
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  keep_history: true
+  local_dir: build
   on:
     branch: master
