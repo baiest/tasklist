@@ -1,15 +1,15 @@
 {
     "development": {
         "username": "postgres",
-        "password": null,
+        "password": "postgres",
         "database": "tasklist",
         "host": "localhost",
         "dialect": "postgres"
     },
     "test": {
         "username": "postgres",
-        "password": "",
-        "database": "tasklist-test",
+        "password": "postgres",
+        "database": "tasklist",
         "host": "localhost",
         "dialect": "postgres"
     },

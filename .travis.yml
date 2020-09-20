@@ -9,6 +9,7 @@ cache: npm
 
 script: 
   - npm run build
+  - npm run test
 
 before_script:
   - cd serve
@@ -16,8 +17,6 @@ before_script:
   - npx sequelize-cli db:migrate
   - npx sequelize-cli db:seed:all
 
-after_script:
-  - node api.js
 
 deploy:
  provider: pages
