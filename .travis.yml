@@ -5,10 +5,8 @@ node_js:
 cache: npm
 
 script: 
-  - sequelize db:create
-  - sequelize db:migrate
-  - sequelize db:seed:all
   - npm run build
+  - ls
 
 deploy:
  provider: pages
