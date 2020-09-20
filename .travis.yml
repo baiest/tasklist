@@ -1,13 +1,16 @@
 language: node_js
 node_js:
- - "node"
+  - "node"
+
+ services:
+  - postgresql
 
 cache: npm
 
 script: 
   - npm run build
 before_script:
-  - psql -c 'create database tasklist' -U postgres
+  - npx sequelize-cli db:create
   - npx sequelize-cli db:migrate
 
 deploy:
