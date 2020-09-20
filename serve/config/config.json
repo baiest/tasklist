@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "postgres",
-        "password": "",
+        "password": "postgres",
         "database": "tasklist",
         "host": "localhost",
         "dialect": "postgres"
@@ -15,7 +15,7 @@
     },
     "production": {
         "username": "postgres",
-        "password": "",
+        "password": null,
         "database": "tasklist-produccion",
         "host": "localhost",
         "dialect": "postgres"
