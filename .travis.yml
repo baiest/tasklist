@@ -5,9 +5,10 @@ node_js:
 cache: npm
 
 script: 
-  - cd serve
-  - npx sequelize-cli db:create
   - npm run build
+before_script:
+  - psql -c 'create database tasklist' -U postgres
+  - npx sequelize-cli db:migrate
 
 deploy:
  provider: pages
