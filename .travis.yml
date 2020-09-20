@@ -4,7 +4,11 @@ node_js:
 
 cache: npm
 
-script: npm run build
+script: 
+  - sequelize db:create
+  - sequelize db:migrate
+  - sequelize db:seed:all
+  - npm run build
 
 deploy:
  provider: pages
