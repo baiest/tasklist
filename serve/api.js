@@ -4,11 +4,11 @@ const port = 3000;
 const { Task } = require('./models');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+/*
 var corsOptions = {
     origin: 'http://localhost:8081/'
 };
-/*
+
 const nuevo = async() => {
     await Task.create({ description: 'Limpiar la casa', realizada: false });
 }
