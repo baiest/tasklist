@@ -15,8 +15,7 @@ before_script:
   - npx sequelize-cli db:create
   - npx sequelize-cli db:migrate
   - npx sequelize-cli db:seed:all
-  - npm install -g pm2
-  - pm2 start api.js
+  - node api.js
 
 deploy:
  provider: pages
