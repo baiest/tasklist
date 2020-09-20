@@ -5,6 +5,7 @@ node_js:
 cache: npm
 
 script: 
+  - cd serve
   - sequelize db:create
   - sequelize db:migrate
   - sequelize db:seed:all
