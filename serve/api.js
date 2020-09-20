@@ -19,10 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.get('/', (req, res) => {
-    /*Task.findAll()
+    Task.findAll()
         .then(result => res.send(JSON.stringify(result, null, 2)))
-        */
-    res.send('Hello world')
 
 });
 app.post('/nuevo', (req, res) => {

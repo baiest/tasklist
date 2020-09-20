@@ -5,17 +5,13 @@ node_js:
 services:
   - postgresql
 
-cache: npm
+cache:
+  directories:
+    - node_modules
 
 script: 
   - npm run build
 
-before_script:
-  - cd serve
-  - npx sequelize-cli db:create
-  - npx sequelize-cli db:migrate
-  - npx sequelize-cli db:seed:all
-  - node api.js
 
 deploy:
  provider: pages
