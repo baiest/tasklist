@@ -1,17 +1,15 @@
-language: node_js 
+language: node_js
+node_js:
+ - "node"
 
-services:
-  - postgresql
-install: 
-  - npm install
-  - npm install -g @vue/cli @vue/cli-service-global
-script:
-  - npm run serve
+cache: npm
+
+script: npm run build
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: master
+ provider: pages
+ skip_cleanup: true
+ github_token: $GITHUB_TOKEN
+ local_dir: dist
+ on:
+   branch: master
