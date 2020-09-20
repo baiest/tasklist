@@ -6,7 +6,8 @@ cache: npm
 
 script: 
   - npm run build
-  - ls
+  - cd serve
+  - sequelize db:create
 
 deploy:
  provider: pages
