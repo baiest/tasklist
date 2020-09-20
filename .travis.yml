@@ -10,6 +10,7 @@ cache: npm
 script: 
   - npm run build
 before_script:
+  - cd serve
   - npx sequelize-cli db:create
   - npx sequelize-cli db:migrate
 
