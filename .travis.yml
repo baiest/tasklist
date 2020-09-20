@@ -5,9 +5,9 @@ node_js:
 cache: npm
 
 script: 
-  - npm run build
   - cd serve
   - npx sequelize-cli db:create
+  - npm run build
 
 deploy:
  provider: pages
