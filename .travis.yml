@@ -9,7 +9,6 @@ cache: npm
 
 script: 
   - npm run build
-  - npm run test
 
 before_script:
   - cd serve
@@ -18,7 +17,6 @@ before_script:
   - npx sequelize-cli db:seed:all
   - npm install -g pm2
   - pm2 start api.js
-
 
 deploy:
  provider: pages
