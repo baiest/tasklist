@@ -12,7 +12,9 @@ cache:
 script: 
   - npm run build
 
-
+after_succes:
+  - cd serve
+  - node api.js
 deploy:
  provider: pages
  skip_cleanup: true
