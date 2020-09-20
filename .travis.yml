@@ -7,8 +7,7 @@ cache: npm
 script: 
   - npm run build
   - cd serve
-  - ls
-  - cat api.js
+  - npx sequelize-cli db:create
 
 deploy:
  provider: pages
