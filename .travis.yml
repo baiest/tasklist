@@ -4,7 +4,7 @@ services:
   - postgresql
 install: 
   - npm install
-  - npm install --production
+  - npm install -g @vue/cli @vue/cli-service-global
 script:
   - npm run serve
 
