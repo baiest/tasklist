@@ -18,7 +18,7 @@
 
 <script>
 import axios from 'axios'
-
+const API = 'http://localhost:3000/' || 'https://baiest-serve.herokuapp.com/'
 export default {
   data(){
     return{
@@ -48,7 +48,7 @@ export default {
     }
   },
   created(){
-    axios.get('http://localhost:3000/')
+    axios.get(API)
     .then(res => this.tasks = res.data);
   }
 }

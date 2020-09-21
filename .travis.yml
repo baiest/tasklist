@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "node"
 
-services:
-  - postgresql
-
 cache:
   directories:
     - node_modules
@@ -12,12 +9,6 @@ cache:
 script: 
   - npm run build
 
-after_succes:
-  - cd serve
-  - npx sequelize-cli db:create
-  - npx sequelize-cli db:migrate
-  - npx sequelize-cli db:seed:all
-  - npm start
 deploy:
  provider: pages
  skip_cleanup: true
