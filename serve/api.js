@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const { Task } = require('./models');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -41,6 +41,6 @@ app.post('/nuevo', (req, res) => {
     console.log(req.body);
     res.send(req.body);
 });
-module.exports = app.listen(port, () => {
-    console.log('Servidor iniciado en el puerto %d', port)
+app.listen(PORT, () => {
+    console.log('Servidor iniciado en el puerto %d', PORT)
 });
