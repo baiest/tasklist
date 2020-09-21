@@ -18,7 +18,7 @@
 
 <script>
 import axios from 'axios'
-const API = 'http://localhost:3000/' || 'https://baiest-serve.herokuapp.com/'
+const API = 'https://baiest-serve.herokuapp.com/'
 export default {
   data(){
     return{
