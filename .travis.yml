@@ -14,8 +14,9 @@ script:
 
 after_succes:
   - cd serve
-  - npm install pm2
-  - pm2 start api.js
+  - npx sequelize-cli db:migrate
+  - npx sequelize-cli db:seed:all
+  - npm start
 deploy:
  provider: pages
  skip_cleanup: true
