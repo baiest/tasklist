@@ -18,7 +18,7 @@ nuevo()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     Task.findAll()
         .then(result => res.send(JSON.stringify(result, null, 2)))
 
